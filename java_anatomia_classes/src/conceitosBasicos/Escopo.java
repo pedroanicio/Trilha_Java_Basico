@@ -1,3 +1,4 @@
+package conceitosBasicos;
 public class Escopo {
     //variavel da classe conta
 	double saldo=10.0;
