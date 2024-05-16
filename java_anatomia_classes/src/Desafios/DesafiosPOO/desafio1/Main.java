@@ -8,7 +8,10 @@ public class Main {
 
         Banco banco = new Banco();
 
+
+
         Cliente venilton = new Cliente();
+        banco.adicionarNome(venilton);
         venilton.setNome("Venilton");
 
         Conta cc = new ContaCorrente(venilton);
@@ -21,6 +24,7 @@ public class Main {
         poupanca.imprimirExtrato();
 
         Cliente pedro = new Cliente();
+        banco.adicionarNome(pedro);
         pedro.setNome("Pedro");
         Conta cc2 = new ContaCorrente(pedro);
         Conta poupanca2 = new ContaPoupanca(pedro);
@@ -38,8 +42,11 @@ public class Main {
         banco.adicionarConta(cc2);
         banco.adicionarConta(poupanca2);
 
+        banco.apagarConta(cc);
+
         System.out.println(banco.getContas());
 
+        System.out.println(banco.getNome());
 
 
     }
