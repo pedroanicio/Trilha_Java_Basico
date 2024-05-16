@@ -1,4 +1,6 @@
+
 package POO.Enum;
+
 
 public class Enum {
 
