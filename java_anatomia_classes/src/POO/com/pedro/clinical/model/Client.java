@@ -1,4 +1,4 @@
 package POO.com.pedro.clinical.model;
 
-public class Cliente {
+public class Client {
 }
