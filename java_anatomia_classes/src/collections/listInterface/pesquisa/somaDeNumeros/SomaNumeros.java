@@ -16,7 +16,7 @@ public class SomaNumeros {
     public int somar(){
         int soma = 0;
         for(Numero n : lista){
-            soma = soma + n.getNumero();
+            soma += n.getNumero();
         }
         return soma;
     }
