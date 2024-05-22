@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/java_anatomia_classes.iml" filepath="$PROJECT_DIR$/java_anatomia_classes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Trail.iml" filepath="$PROJECT_DIR$/Java_Trail.iml" />
     </modules>
   </component>
 </project>
