@@ -1,0 +1,49 @@
+//Acessar container mongo
+
+mongosh --host 127.0.0.1:27017 --username user --password pass
+
+
+//Criar database
+
+use bootcamp_dio
+
+//Criar collection de forma explicita com tamanho máximo
+
+bootcamp_dio> db.createCollection("test", {capped: true, max: 2, size:2});
+
+// criar collection de forma implicita
+
+bootcamp_dio> db.test1.insertOne({"age": 10})
+
+//Inserir objeto na collection criadas
+
+bootcamp_dio> db.test.insertOne({"name": "Teste 1"});
+
+//Listar itens da collection
+
+bootcamp_dio> db.test.find({})
+
+//Inserir mais de um item
+
+bootcamp_dio> db.clients.insert([{"name":"Pedro", "age": 2},{"name":"Lucas"}]);
+
+// atualizar documento por completo(não é uma boa prática)
+
+db.clients.save({"_id": ObjectId('6660a38ea7468b55e9a26a1c'), "name": 'Pedro', age: 20 })
+//Starting in MongoDB 4.2, the db.collection.save() method is deprecated. Use db.collection.insertOne() or db.collection.replaceOne() instead.
+
+//Atualizar documento onde for necessário
+
+bootcamp_dio> db.clients.update({"name": "Lucas"}, {$set : {"age": 41}})
+bootcamp_dio> db.clients.update({"age": 40}, {$set : {"age": 43}}, {multi: true})
+bootcamp_dio> db.clients.updateMany({"age":44}, {$set: {"age": 55}})
+
+
+//Buscas mais específicas
+
+bootcamp_dio> db.clients.find({"age":41})
+bootcamp_dio> db.clients.find({"age":41}).limit(1)
+bootcamp_dio> db.clients.find({"age": {$in: [30, 41]}})
+
+
+

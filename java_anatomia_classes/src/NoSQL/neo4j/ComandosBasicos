@@ -1,0 +1,29 @@
+NEO4J
+
+Criar nó:
+
+CREATE (:Client {name: "Pedro", age: 20, hobbies: ["Play games, read books"]})
+
+MATCH (pedro) RETURN pedro
+
+Criar relacionamento entre dois nós que não existem:
+
+CREATE (:Client {name: "Andre", age: 22, hobbies: ["Watch movies, study"]}) -[:Bloqueado]->(:Client {name: "Luis", age: 15, hobbies: ["Play games"]})
+
+Criar um relacionamento entre dois nós que já existem:
+
+MATCH (luis:Client {name: "Luis"}), (andre:Client {name:"Andre"}) CREATE (luis)-[:Bloqueado]->(andre)
+
+MATCH (pedro:Client {name: "Pedro"}), (luis:Client {name:"Luis"}) CREATE (pedro)-[:Amigo]->(luis)
+
+Remover relacionamento: 
+
+MATCH (luis:Client {name:"Luis"})-[relaciona:Bloqueado]-() DELETE relaciona
+
+Excluir nó:
+
+MATCH (andre:Client {name: "Andre"}) DELETE andre;
+
+Atualizar nó:
+
+MATCH (luis:Client {name:"Luis"}) SET luis.hobbies = ["paly soccer"];
